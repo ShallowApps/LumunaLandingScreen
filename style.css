@@ -1,0 +1,129 @@
+:root {
+  --screen: #F3EBE4;
+  --surface: #EDE1D8;
+  --ink: #3A2A2A;
+  --body: #6B5546;
+  --muted: #8A6A4A;
+  --rim: #B8975A;
+  --line: rgba(184, 151, 90, 0.4);
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --screen: #141014;
+    --surface: #231B20;
+    --ink: #FFFFFF;
+    --body: rgba(255, 255, 255, 0.72);
+    --muted: rgba(255, 255, 255, 0.6);
+    --rim: #F06AA8;
+    --line: rgba(255, 255, 255, 0.18);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--screen);
+  color: var(--body);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: var(--ink); text-decoration-color: var(--rim); text-underline-offset: 3px; }
+a:hover { color: var(--rim); }
+
+.wrap { width: 100%; max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+/* Header */
+header { padding: 24px 0; }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.wordmark {
+  font: italic 500 24px/1 "New York", "Iowan Old Style", Georgia, serif;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+nav { display: flex; gap: 18px; flex-wrap: wrap; }
+nav a, .caps {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+}
+nav a[aria-current="page"], nav a:hover { color: var(--ink); }
+
+main { flex: 1; }
+
+/* Home */
+.hero { text-align: center; padding: 12vh 0 10vh; }
+.hero .mark {
+  width: 96px; height: 96px; margin: 0 auto 32px;
+  border-radius: 24px;
+  background: linear-gradient(160deg, #FFD8F9, #372022);
+  box-shadow: 0 12px 40px rgba(58, 42, 42, 0.25);
+}
+.hero h1 {
+  margin: 0;
+  font: italic 500 clamp(52px, 12vw, 88px)/1 "New York", "Iowan Old Style", Georgia, serif;
+  color: var(--ink);
+}
+.hero .caps { display: block; margin-top: 14px; }
+.hero p { max-width: 440px; margin: 28px auto 36px; font-size: 19px; }
+.pill {
+  display: inline-block;
+  padding: 15px 28px;
+  border: 1px solid var(--rim);
+  border-radius: 999px;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+}
+.pill:hover { background: var(--surface); color: var(--ink); }
+
+.features { list-style: none; padding: 0; margin: 0 0 12vh; border-top: 1px solid var(--line); }
+.features li { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.features strong { display: block; color: var(--ink); font-weight: 600; }
+
+/* Documents */
+.doc { padding: 32px 0 72px; }
+.doc h1 {
+  margin: 0 0 6px;
+  font: italic 500 44px/1.1 "New York", "Iowan Old Style", Georgia, serif;
+  color: var(--ink);
+}
+.doc .updated { margin: 0 0 40px; }
+.doc h2 {
+  margin: 40px 0 8px;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink);
+}
+.doc ul { padding-left: 20px; }
+.doc li { margin: 6px 0; }
+
+.contact {
+  margin: 8px 0 32px;
+  padding: 24px;
+  background: var(--surface);
+  border-radius: 22px;
+}
+.contact strong { display: block; color: var(--ink); margin-bottom: 4px; }
+
+details { border-bottom: 1px solid var(--line); padding: 16px 0; }
+details:first-of-type { border-top: 1px solid var(--line); }
+summary { cursor: pointer; color: var(--ink); font-weight: 500; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; float: right; color: var(--rim); }
+details[open] summary::after { content: "−"; }
+details p { margin: 10px 0 0; }
+
+/* Footer */
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+footer nav { gap: 16px; }
