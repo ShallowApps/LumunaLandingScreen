@@ -1,11 +1,11 @@
 # Lumuna – Landing
 
-Static site for [lumuna.app](https://lumuna.app). No build step.
+Single-page static site for [lumuna.app](https://lumuna.app). No build step.
 
 - `/` home
-- `/privacy/` privacy policy
-- `/terms/` terms of use
-- `/support/` support & FAQ
+- `/#privacy` privacy policy
+- `/#terms` terms of use
+- `/#support` support & FAQ
 
 Contact: contact@shallowapps.com
 

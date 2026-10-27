@@ -91,8 +91,10 @@ main { flex: 1; }
 .features li { padding: 20px 0; border-bottom: 1px solid var(--line); }
 .features strong { display: block; color: var(--ink); font-weight: 600; }
 
-/* Documents */
-.doc { padding: 32px 0 72px; }
+/* Documents: one page, the #hash picks which section shows */
+.doc { display: none; padding: 32px 0 72px; }
+.doc:target { display: block; }
+main:has(.doc:target) #home { display: none; }
 .doc h1 {
   margin: 0 0 6px;
   font: italic 500 44px/1.1 "New York", "Iowan Old Style", Georgia, serif;
