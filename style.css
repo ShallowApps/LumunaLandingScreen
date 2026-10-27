@@ -65,10 +65,9 @@ main { flex: 1; }
 /* Home */
 .hero { text-align: center; padding: 12vh 0 10vh; }
 .hero .mark {
+  display: block;
   width: 96px; height: 96px; margin: 0 auto 32px;
-  border-radius: 24px;
-  background: linear-gradient(160deg, #FFD8F9, #372022);
-  box-shadow: 0 12px 40px rgba(58, 42, 42, 0.25);
+  filter: drop-shadow(0 12px 24px rgba(58, 42, 42, 0.25));
 }
 .hero h1 {
   margin: 0;
